@@ -1,0 +1,15 @@
+{
+  "_instructions": "Optional display overrides keyed by RSI handle, case-insensitive. The updater reads official RSI first. Supported fields: name, rank, membership, roles (array), avatar, hidden.",
+  "JHigashi-FRAME": {
+    "name": "J.HigashiFrameAdv"
+  },
+  "Tronword_Furey": {
+    "name": "Tronword Furey"
+  },
+  "HiddenPotato": {
+    "name": "Hidden"
+  },
+  "BrockJ21": {
+    "name": "Brock"
+  }
+}
