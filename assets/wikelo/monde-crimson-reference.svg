@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Monde Crimson Camo visual reference</title>
+  <desc id="desc">A stylized crimson heavy armor silhouette used as a visual reference while exact official artwork is unavailable.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07131f"/>
+      <stop offset="1" stop-color="#150913"/>
+    </linearGradient>
+    <linearGradient id="plate" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff5476"/>
+      <stop offset=".45" stop-color="#981f3d"/>
+      <stop offset="1" stop-color="#3d0c1b"/>
+    </linearGradient>
+    <pattern id="camo" width="36" height="36" patternUnits="userSpaceOnUse">
+      <rect width="36" height="36" fill="url(#plate)"/>
+      <path d="M0 5h13v9H4v8H0zm19-5h17v12h-8v8H17V9h2zM9 28h18v8H9z" fill="#2c0712" opacity=".72"/>
+      <path d="M4 14h9v7H4zm22 8h10v10H26z" fill="#ff7892" opacity=".35"/>
+    </pattern>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="640" height="360" fill="url(#bg)"/>
+  <path d="M0 286L640 218V360H0Z" fill="#071018"/>
+  <g opacity=".12" stroke="#66e8ff" fill="none">
+    <path d="M30 52h190M420 55h188M25 310h180M435 304h170"/>
+    <circle cx="320" cy="174" r="132"/>
+    <circle cx="320" cy="174" r="108"/>
+  </g>
+  <g transform="translate(205 20)">
+    <ellipse cx="115" cy="304" rx="110" ry="19" fill="#000" opacity=".55"/>
+    <path d="M80 35L99 16h32l20 19 5 42-21 24H96L75 77Z" fill="url(#camo)" stroke="#ff7691" stroke-width="3"/>
+    <path d="M91 47h48l7 18-16 13h-30L84 65Z" fill="#07131f" stroke="#8df6ff" stroke-width="3" filter="url(#glow)"/>
+    <path d="M58 93l36-15h42l37 15 23 73-27 82H61l-28-82Z" fill="url(#camo)" stroke="#ff6785" stroke-width="4"/>
+    <path d="M73 104h84l18 58-26 24H80l-25-24Z" fill="#1a1d2b" stroke="#ff6b89" stroke-width="3"/>
+    <path d="M96 110h40l12 37-13 19H96l-14-19Z" fill="#5c1429"/>
+    <path d="M34 105L7 124l-13 79 30 8 25-71Z" fill="url(#camo)" stroke="#ff6785" stroke-width="4"/>
+    <path d="M196 105l27 19 13 79-30 8-25-71Z" fill="url(#camo)" stroke="#ff6785" stroke-width="4"/>
+    <path d="M10 200l22 6-6 79H1Z" fill="#2a101b" stroke="#ff5678" stroke-width="3"/>
+    <path d="M220 200l-22 6 6 79h25Z" fill="#2a101b" stroke="#ff5678" stroke-width="3"/>
+    <path d="M66 238h48l-8 77H51Z" fill="url(#camo)" stroke="#ff6785" stroke-width="4"/>
+    <path d="M116 238h48l15 77h-55Z" fill="url(#camo)" stroke="#ff6785" stroke-width="4"/>
+    <path d="M53 301h54l-8 24H40Z" fill="#111827" stroke="#ff5678" stroke-width="3"/>
+    <path d="M124 301h55l13 24h-60Z" fill="#111827" stroke="#ff5678" stroke-width="3"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="28" y="40" fill="#ff6b8b" font-size="15" font-weight="700" letter-spacing="3">WIKELO TRADE CENTER</text>
+    <text x="28" y="302" fill="#f8fafc" font-size="25" font-weight="800">MONDE · CRIMSON CAMO</text>
+    <text x="29" y="327" fill="#8ba5b5" font-size="12" font-weight="700" letter-spacing="2">VISUAL REFERENCE · EXACT ITEM ART PENDING</text>
+  </g>
+</svg>

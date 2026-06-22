@@ -1,6 +1,21 @@
-const CACHE_NAME = 'celestial-nexus-v73-2026-06-22';
+const CACHE_NAME = 'celestial-nexus-v74-2026-06-22';
 const CORE_SHELL = ['./', './index.html'];
-const OPTIONAL_SHELL = ['./manifest.webmanifest', './icon-192.png', './icon-512.png', './data/roster.json'];
+const OPTIONAL_SHELL = [
+  './manifest.webmanifest',
+  './icon-192.png',
+  './icon-512.png',
+  './data/roster.json',
+  './assets/wikelo/boomtube-clanguard.webp',
+  './assets/wikelo/palatino-mark-1.webp',
+  './assets/wikelo/geist-snow.webp',
+  './assets/wikelo/ana-endro.webp',
+  './assets/wikelo/bokto.webp',
+  './assets/wikelo/strata-heatwave.webp',
+  './assets/wikelo/killshot-dominion-reference.webp',
+  './assets/wikelo/r97-crimson-reference.webp',
+  './assets/wikelo/polaris-bit-reference.webp',
+  './assets/wikelo/monde-crimson-reference.svg'
+];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
