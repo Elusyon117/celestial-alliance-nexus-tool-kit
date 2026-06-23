@@ -6,5 +6,7 @@
 - [ ] Commit all updated files to `main`.
 - [ ] Confirm GitHub Pages is publishing from `main` and `/(root)`.
 - [ ] Open the live site and test Tool Hub, Mining Resources Command, Commodity Trading, and Fuel Route Planner.
+- [ ] In Vehicle Loadout Manager, open an upgrade shopping list and confirm the ship and route-location images appear.
+- [ ] Export the shopping list image and confirm route amounts do not overlap.
 - [ ] Test one mobile-width view.
 - [ ] Hard-refresh once to replace the previous service-worker cache.

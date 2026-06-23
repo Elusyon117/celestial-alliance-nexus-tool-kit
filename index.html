@@ -5,11 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#07131f" />
 <meta name="application-name" content="Celestial Nexus" />
-<meta name="description" content="Celestial Nexus is a fan-made Star Citizen alliance toolkit for operations, trading, mining, loadouts, intelligence, and organization planning." />
-<meta name="color-scheme" content="dark" />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Celestial Nexus — Alliance Toolkit" />
-<meta property="og:description" content="A community-built Star Citizen toolkit for Celestial Alliance operations, logistics, mining, trading, and intelligence." />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <meta name="apple-mobile-web-app-title" content="Celestial Nexus" />
@@ -4095,6 +4090,42 @@ body {
 @media(max-width:880px){.mining-shell{width:min(100% - 18px,1540px)}.mining-hero-inner{grid-template-columns:1fr;padding:25px}.mining-commandbar{position:relative;top:auto;grid-template-columns:repeat(2,minmax(0,1fr))}.mining-field:first-child{grid-column:1/-1}.mining-layout{grid-template-columns:1fr}.mining-browser{position:relative;top:auto;max-height:390px}.mining-dossier-top{grid-template-columns:1fr}.mining-resource-art{min-height:230px}.mining-location-grid,.mining-loadout-grid{grid-template-columns:1fr}.mining-guide-grid{grid-template-columns:1fr}.mining-guide-image{height:220px}}
 @media(max-width:580px){.mining-hero-inner{padding:20px}.mining-title{font-size:39px}.mining-hero-stats{grid-template-columns:1fr 1fr}.mining-commandbar{grid-template-columns:1fr}.mining-field:first-child{grid-column:auto}.mining-command-actions{width:100%}.mining-command-actions button{flex:1}.mining-dossier-copy{padding:18px}.mining-core-stats{grid-template-columns:repeat(2,1fr)}.mining-core-stat:nth-child(odd){border-right:1px solid rgba(148,163,184,.1)}.mining-core-stat:nth-child(even){border-right:0}.mining-core-stat:nth-child(n+3){border-top:1px solid rgba(148,163,184,.1)}.mining-insight-grid,.mining-checklist,.mining-sources{grid-template-columns:1fr}.mining-crew-strip{grid-template-columns:repeat(2,1fr)}.mining-section{padding:14px}.mining-section-head{align-items:flex-start;flex-direction:column}.mining-section-note{text-align:left}.mining-action-strip{justify-content:stretch}.mining-action{flex:1}}
 
+
+
+/* V82 — VEHICLE SHOPPING LIST VISUAL EXPORT + ROUTE LEGIBILITY */
+.loadout-shopping-vehicle-strip {
+  display:grid;
+  grid-template-columns:minmax(230px,34%) minmax(0,1fr);
+  min-height:176px;
+  margin-bottom:14px;
+  overflow:hidden;
+  border:1px solid rgba(139,92,246,.28);
+  border-radius:12px;
+  background:linear-gradient(135deg,rgba(20,24,39,.92),rgba(8,12,20,.96));
+}
+.loadout-shopping-vehicle-media { position:relative; min-height:176px; overflow:hidden; background:radial-gradient(circle at 55% 35%,rgba(139,92,246,.2),transparent 50%),#0a0e17; }
+.loadout-shopping-vehicle-media img { width:100%; height:100%; object-fit:cover; display:block; }
+.loadout-shopping-vehicle-media::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg,rgba(6,9,15,.02),rgba(6,9,15,.72)); pointer-events:none; }
+.loadout-shopping-vehicle-placeholder { position:absolute; inset:0; display:grid; place-items:center; color:#c4b5fd; font:800 34px 'Share Tech Mono',monospace; letter-spacing:.08em; }
+.loadout-shopping-vehicle-copy { min-width:0; align-self:center; padding:20px 22px; }
+.loadout-shopping-vehicle-eyebrow { color:#a78bfa; font:700 10px 'Share Tech Mono',monospace; letter-spacing:.13em; text-transform:uppercase; }
+.loadout-shopping-vehicle-name { margin-top:7px; color:#fff; font-size:27px; font-weight:780; line-height:1.08; overflow-wrap:anywhere; }
+.loadout-shopping-vehicle-meta { margin-top:8px; color:var(--text3); font-size:11.5px; line-height:1.55; }
+.loadout-shopping-vehicle-badges { display:flex; gap:6px; flex-wrap:wrap; margin-top:12px; }
+.loadout-shopping-vehicle-badge { padding:4px 7px; border:1px solid rgba(139,92,246,.25); border-radius:999px; background:rgba(76,29,149,.16); color:#ddd6fe; font:700 9px 'Share Tech Mono',monospace; text-transform:uppercase; letter-spacing:.05em; }
+.loadout-shopping-stop.has-image .loadout-shopping-stop-media img { opacity:1; }
+.loadout-shopping-stop-media::after { background:linear-gradient(180deg,rgba(7,10,16,.01),rgba(7,10,16,.48)); }
+.loadout-shopping-stop-item > div:first-child { min-width:0; }
+.loadout-shopping-stop-item-price { min-width:116px; }
+@media (max-width:760px) {
+  .loadout-shopping-vehicle-strip { grid-template-columns:1fr; }
+  .loadout-shopping-vehicle-media { min-height:190px; }
+  .loadout-shopping-vehicle-media::after { background:linear-gradient(180deg,rgba(6,9,15,.02),rgba(6,9,15,.65)); }
+}
+@media (max-width:520px) {
+  .loadout-shopping-stop-item { grid-template-columns:1fr; }
+  .loadout-shopping-stop-item-price { min-width:0; text-align:left; }
+}
 </style>
 
 <style id="v76-mining-visual-lift">
@@ -4634,7 +4665,7 @@ body {
 </style>
 
 <style>
-/* ===== V0.81 — FULL-PAGE COMMODITY + 4.9 FUEL ROUTE PLANNER ===== */
+/* ===== V0.82 — FULL-PAGE COMMODITY + 4.9 FUEL ROUTE PLANNER ===== */
 #commodity-view{--trade-teal:#2dd4bf;--trade-cyan:#38bdf8;--trade-green:#34d399;--trade-amber:#fbbf24;--trade-red:#fb7185}
 #commodity-view .trade-shell{width:calc(100% - 28px);max-width:none;margin:0 14px;padding:22px 0 64px}
 #commodity-view .trade-hero{padding:28px 30px}
@@ -6051,6 +6082,18 @@ body {
             </div>
           </div>
           <div class="loadout-section-body">
+            <div class="loadout-shopping-vehicle-strip" id="loadout-shopping-vehicle-strip" hidden>
+              <div class="loadout-shopping-vehicle-media">
+                <img id="loadout-shopping-vehicle-image" alt="Selected vehicle artwork" hidden />
+                <div class="loadout-shopping-vehicle-placeholder" id="loadout-shopping-vehicle-placeholder">CN</div>
+              </div>
+              <div class="loadout-shopping-vehicle-copy">
+                <div class="loadout-shopping-vehicle-eyebrow">Selected vehicle</div>
+                <div class="loadout-shopping-vehicle-name" id="loadout-shopping-vehicle-name">Vehicle</div>
+                <div class="loadout-shopping-vehicle-meta" id="loadout-shopping-vehicle-meta">Upgrade acquisition plan</div>
+                <div class="loadout-shopping-vehicle-badges" id="loadout-shopping-vehicle-badges"></div>
+              </div>
+            </div>
             <div class="loadout-shopping-summary" id="loadout-shopping-summary">
               <div class="loadout-empty" style="grid-column:1/-1">Choose components that differ from stock to build an upgrade shopping list.</div>
             </div>
@@ -12655,11 +12698,46 @@ function nexusLoadoutOfficialPageUrl(vehicle) {
 
 function nexusLoadoutVehicleDescription(vehicle){return nexusLoadoutText(vehicle,['description','description_data','short_description','career'],`${vehicle?.name||'This vehicle'} loaded from current community game data.`);}
 
+
+function nexusLoadoutSyncShoppingVehicleBanner() {
+  const strip=document.getElementById('loadout-shopping-vehicle-strip');
+  const bannerImage=document.getElementById('loadout-shopping-vehicle-image');
+  const placeholder=document.getElementById('loadout-shopping-vehicle-placeholder');
+  const nameNode=document.getElementById('loadout-shopping-vehicle-name');
+  const metaNode=document.getElementById('loadout-shopping-vehicle-meta');
+  const badgesNode=document.getElementById('loadout-shopping-vehicle-badges');
+  if(!strip||!bannerImage||!placeholder||!nameNode||!metaNode||!badgesNode)return;
+  const setup=nexusLoadoutState.setup,vehicle=nexusLoadoutState.vehicle;
+  if(!setup||!vehicle){strip.hidden=true;return;}
+  strip.hidden=false;
+  const displayName=nexusLoadoutDisplayName(vehicle,setup)||setup.shipName||vehicle.name||'Selected vehicle';
+  const cover=document.getElementById('loadout-vehicle-image');
+  const hasCover=!!(cover&&!cover.hidden&&cover.src);
+  nameNode.textContent=displayName;
+  const manufacturer=vehicleManufacturerName(vehicle)||'Vehicle';
+  const rows=nexusLoadoutState.shoppingRows?.length?nexusLoadoutState.shoppingRows:nexusLoadoutBuildShoppingRows();
+  const quantity=rows.reduce((sum,row)=>sum+Number(row.quantity||0),0);
+  metaNode.textContent=`${manufacturer} · ${rows.length} upgrade line${rows.length===1?'':'s'} · ${quantity} component${quantity===1?'':'s'} in the acquisition plan`;
+  const tags=[vehicle.career,vehicle.role,vehicle.type,setup.version||vehicle.game_version].filter(Boolean).slice(0,4);
+  badgesNode.innerHTML=tags.map(tag=>`<span class="loadout-shopping-vehicle-badge">${esc(String(tag))}</span>`).join('');
+  if(hasCover){
+    bannerImage.src=cover.src;
+    bannerImage.alt=`${displayName} vehicle artwork`;
+    bannerImage.hidden=false;
+    placeholder.hidden=true;
+  }else{
+    bannerImage.removeAttribute('src');
+    bannerImage.hidden=true;
+    placeholder.hidden=false;
+    placeholder.textContent=nexusLoadoutRouteInitials(displayName);
+  }
+}
+
 async function nexusLoadoutRenderVehicleImage(vehicle) {
   const image=document.getElementById('loadout-vehicle-image'), placeholder=document.getElementById('loadout-vehicle-placeholder'), source=document.getElementById('loadout-image-source');
   if(!image||!placeholder||!source||!vehicle)return;
   const selectedName=nexusLoadoutDisplayName(vehicle);
-  const token=++nexusLoadoutState.imageToken; image.hidden=true; placeholder.hidden=false; source.textContent='Searching vehicle artwork';
+  const token=++nexusLoadoutState.imageToken; image.hidden=true; placeholder.hidden=false; source.textContent='Searching vehicle artwork'; nexusLoadoutSyncShoppingVehicleBanner();
   const profile=nexusSpecialRewardPhotoProfile(selectedName);
   const candidates=[],seen=new Set();
   if(profile?.imageUrl)nexusPushImageCandidate(candidates,seen,profile.imageUrl,profile.sourceLabel||'Special reward artwork',profile.sourceUrl||profile.imageUrl,1000,{title:selectedName,exactTitle:true,specialReward:true});
@@ -12673,10 +12751,10 @@ async function nexusLoadoutRenderVehicleImage(vehicle) {
       const imageSource = candidate.source || (profile?.sourceLabel) || 'Community artwork';
       const referenceNote = profile && !candidate.specialReward && !profile.imageUrl ? ` · ${profile.badge} hull reference` : '';
       source.textContent=imageSource + referenceNote;
-      nexusLoadoutHealthMark('images','ready',imageSource + (referenceNote ? ' loaded.' : ' loaded.')); return;
+      nexusLoadoutHealthMark('images','ready',imageSource + (referenceNote ? ' loaded.' : ' loaded.')); nexusLoadoutSyncShoppingVehicleBanner(); return;
     }
   }
-  source.textContent='No embeddable artwork found'; nexusLoadoutHealthMark('images','warn','No embeddable vehicle artwork was found.');
+  source.textContent='No embeddable artwork found'; nexusLoadoutHealthMark('images','warn','No embeddable vehicle artwork was found.'); nexusLoadoutSyncShoppingVehicleBanner();
 }
 
 function nexusLoadoutRenderVehicle() {
@@ -13572,8 +13650,8 @@ async function nexusLoadoutHydrateRouteImages() {
 }
 function nexusLoadoutRenderShopping() {
   const summary=document.getElementById('loadout-shopping-summary'),list=document.getElementById('loadout-shopping-list'),routeNode=document.getElementById('loadout-shopping-route');if(!summary||!list||!routeNode)return;
-  const setup=nexusLoadoutState.setup;if(!setup){summary.innerHTML='<div class="loadout-empty" style="grid-column:1/-1">Choose components that differ from stock to build an upgrade shopping list.</div>';list.innerHTML='';routeNode.hidden=true;return;}
-  const rows=nexusLoadoutState.shoppingRows?.length?nexusLoadoutState.shoppingRows:nexusLoadoutBuildShoppingRows();nexusLoadoutState.shoppingRows=rows;
+  const setup=nexusLoadoutState.setup;if(!setup){const vehicleStrip=document.getElementById('loadout-shopping-vehicle-strip');if(vehicleStrip)vehicleStrip.hidden=true;summary.innerHTML='<div class="loadout-empty" style="grid-column:1/-1">Choose components that differ from stock to build an upgrade shopping list.</div>';list.innerHTML='';routeNode.hidden=true;return;}
+  const rows=nexusLoadoutState.shoppingRows?.length?nexusLoadoutState.shoppingRows:nexusLoadoutBuildShoppingRows();nexusLoadoutState.shoppingRows=rows;nexusLoadoutSyncShoppingVehicleBanner();
   if(!rows.length){summary.innerHTML='<div class="loadout-empty" style="grid-column:1/-1">This vehicle is currently using its stock component configuration. Select an upgrade to create a shopping list.</div>';list.innerHTML='';routeNode.hidden=true;nexusLoadoutHealthMark('pricing','idle','No non-stock upgrades require price checks.');return;}
   const buyRows=rows.filter(row=>row.mode==='buy');const purchaseQty=buyRows.reduce((sum,row)=>sum+row.quantity,0);const cheapestPossible=buyRows.reduce((sum,row)=>sum+(row.priceEntry?.rows?.[0]?Number(row.priceEntry.rows[0].price_buy)*row.quantity:0),0);const missing=buyRows.filter(row=>!row.priceEntry?.rows?.length).length;const route=nexusLoadoutShoppingRoute(rows);const skipped=rows.filter(row=>row.mode!=='buy').reduce((sum,row)=>sum+row.quantity,0);const liveVersions=[...new Set(rows.flatMap(row=>(row.priceEntry?.rows||[]).map(price=>nexusLoadoutVersionLabel(price.game_version))).filter(Boolean))].sort((a,b)=>nexusLoadoutCompareVersions(b,a));
   const routeModeLabel=route.mode==='cheapest'?'Cheapest price':'Closest locations';
@@ -13605,19 +13683,68 @@ async function nexusLoadoutCopyShoppingList() { const text=nexusLoadoutShoppingT
 function nexusLoadoutCsvCell(value) { const text=String(value??'');return /[",\n]/.test(text)?`"${text.replaceAll('"','""')}"`:text; }
 function nexusLoadoutExportShoppingCsv() { const setup=nexusLoadoutState.setup,rows=nexusLoadoutState.shoppingRows||[];if(!setup||!rows.length){showToast('No upgrade shopping list to export');return;}const data=[['Vehicle','Component','Category','Quantity','Acquisition','Unit price aUEC','Line total aUEC','Best seller','Game version']];rows.forEach(row=>{const best=row.priceEntry?.rows?.[0];data.push([setup.shipName,row.name,ACTUAL_COMPONENT_CATEGORIES[row.category]?.label||row.category,row.quantity,row.mode,best?Number(best.price_buy):'',best?Number(best.price_buy)*row.quantity:'',best?nexusLoadoutShoppingLocation(best):'',best?.game_version||'']);});const blob=new Blob([data.map(line=>line.map(nexusLoadoutCsvCell).join(',')).join('\n')],{type:'text/csv;charset=utf-8'});const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download=`${String(setup.shipName).replace(/[^a-z0-9]+/gi,'_')}_Upgrade_Shopping_List.csv`;document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);showToast('Shopping list CSV exported'); }
 
-function nexusLoadoutBuildShoppingExportCanvas(scale = 2) {
+function nexusLoadoutCanvasRoundedPath(ctx,x,y,w,h,r=12) {
+  const radius=Math.max(0,Math.min(r,Math.min(w,h)/2));
+  ctx.beginPath();
+  ctx.moveTo(x+radius,y);
+  ctx.arcTo(x+w,y,x+w,y+h,radius);
+  ctx.arcTo(x+w,y+h,x,y+h,radius);
+  ctx.arcTo(x,y+h,x,y,radius);
+  ctx.arcTo(x,y,x+w,y,radius);
+  ctx.closePath();
+}
+
+async function nexusLoadoutShoppingExportMedia(route) {
+  const coverElement=document.getElementById('loadout-vehicle-image');
+  const ship=await nexusLoadoutLoadSafeExportImage(coverElement?.src||'');
+  const cards=[...document.querySelectorAll('#loadout-shopping-route .loadout-shopping-stop[data-route-image-key]')];
+  const domImages=new Map(cards.map(card=>{
+    const key=nexusNormalizeItemName(card.dataset.routeImageKey||'');
+    const image=card.querySelector('img');
+    return [key,image&&!image.hidden&&image.src?image.src:''];
+  }));
+  const locations=await Promise.all(route.stops.map(async stop=>{
+    const query=stop.meta?.imageKey||stop.meta?.place||stop.meta?.system||stop.location||'Star Citizen';
+    const key=nexusNormalizeItemName(query);
+    let source=domImages.get(key)||'';
+    if(!source){
+      try{const candidate=await nexusLoadoutResolveLocationImage(query);source=candidate?.url||'';}catch(_){}
+    }
+    return nexusLoadoutLoadSafeExportImage(source);
+  }));
+  return {ship,locations};
+}
+
+async function nexusLoadoutBuildShoppingExportCanvas(scale = 2) {
   const setup = nexusLoadoutState.setup;
   const rows = nexusLoadoutState.shoppingRows || [];
   if (!setup || !rows.length) throw new Error('No upgrade shopping list is available.');
+  if(document.fonts?.ready){try{await Promise.race([document.fonts.ready,new Promise(resolve=>setTimeout(resolve,1000))]);}catch(_){}}
   const route = nexusLoadoutShoppingRoute(rows);
+  const media = await nexusLoadoutShoppingExportMedia(route);
   const buying = rows.filter(row => row.mode === 'buy');
   const priced = buying.filter(row => row.priceEntry?.rows?.length);
   const total = priced.reduce((sum,row) => sum + Number(row.priceEntry.rows[0].price_buy) * Number(row.quantity || 1), 0);
-  const routeRows = Math.max(1, Math.ceil(route.stops.length / 2));
   const width = 1500;
-  const headerHeight = 190;
+  const margin = 54;
+  const headerHeight = 300;
   const summaryHeight = 118;
-  const routeHeight = route.stops.length ? 86 + routeRows * 190 : 0;
+  const routeColumns = route.stops.length === 1 ? 1 : 2;
+  const routeGap = 16;
+  const routeMediaHeight = 146;
+  const routeBodyHeader = 78;
+  const routeItemHeight = 42;
+  const routeFooterHeight = 54;
+  const routeCards = route.stops.map((stop,index)=>({
+    stop,index,
+    height:routeMediaHeight+routeBodyHeader+Math.max(1,stop.items.length)*routeItemHeight+routeFooterHeight+12
+  }));
+  const routeCardRows=[];
+  for(let index=0;index<routeCards.length;index+=routeColumns){
+    const cards=routeCards.slice(index,index+routeColumns);
+    routeCardRows.push({cards,height:Math.max(...cards.map(card=>card.height))});
+  }
+  const routeHeight = route.stops.length ? 86 + routeCardRows.reduce((sum,row)=>sum+row.height,0)+Math.max(0,routeCardRows.length-1)*routeGap : 0;
   const listHeight = 78 + rows.length * 86;
   const footerHeight = 80;
   const height = headerHeight + summaryHeight + routeHeight + listHeight + footerHeight;
@@ -13628,6 +13755,7 @@ function nexusLoadoutBuildShoppingExportCanvas(scale = 2) {
   ctx.scale(scale, scale);
   ctx.fillStyle = '#070b12';
   ctx.fillRect(0, 0, width, height);
+
   const gradient = ctx.createLinearGradient(0, 0, width, 0);
   gradient.addColorStop(0, '#11172a');
   gradient.addColorStop(.55, '#0b1220');
@@ -13636,20 +13764,38 @@ function nexusLoadoutBuildShoppingExportCanvas(scale = 2) {
   ctx.fillRect(0, 0, width, headerHeight);
   ctx.fillStyle = '#8b5cf6';
   ctx.fillRect(0, 0, width, 5);
-  const margin = 54;
+
+  const artX=930, artY=26, artW=width-margin-artX, artH=headerHeight-52;
+  ctx.save();
+  nexusLoadoutCanvasRoundedPath(ctx,artX,artY,artW,artH,16);
+  ctx.clip();
+  if(media.ship){
+    drawImageCover(ctx,media.ship,artX,artY,artW,artH,0);
+  }else{
+    const fallback=ctx.createLinearGradient(artX,artY,artX+artW,artY+artH);
+    fallback.addColorStop(0,'#1c1a35');fallback.addColorStop(1,'#071a1d');ctx.fillStyle=fallback;ctx.fillRect(artX,artY,artW,artH);
+    ctx.fillStyle='rgba(196,181,253,.72)';ctx.font='800 58px "Share Tech Mono", monospace';ctx.textAlign='center';ctx.fillText(nexusLoadoutRouteInitials(setup.shipName),artX+artW/2,artY+artH/2+18);ctx.textAlign='left';
+  }
+  const artShade=ctx.createLinearGradient(artX,artY,artX+artW,artY);
+  artShade.addColorStop(0,'rgba(7,11,18,.6)');artShade.addColorStop(.42,'rgba(7,11,18,.08)');artShade.addColorStop(1,'rgba(7,11,18,.12)');ctx.fillStyle=artShade;ctx.fillRect(artX,artY,artW,artH);
+  ctx.restore();
+  ctx.strokeStyle='rgba(167,139,250,.34)';ctx.lineWidth=1.5;nexusLoadoutCanvasRoundedPath(ctx,artX,artY,artW,artH,16);ctx.stroke();
+
   ctx.fillStyle = '#c4b5fd';
   ctx.font = '700 16px "Share Tech Mono", monospace';
   ctx.fillText('CELESTIAL NEXUS · ACQUISITION PLANNER', margin, 52);
   ctx.fillStyle = '#ffffff';
   ctx.font = '800 42px Inter, Arial, sans-serif';
   ctx.fillText('Upgrade shopping list', margin, 104);
+  ctx.fillStyle='#a78bfa';ctx.font='700 15px "Share Tech Mono", monospace';ctx.fillText('SELECTED VEHICLE',margin,146);
+  ctx.fillStyle='#f8fafc';ctx.font='800 31px Inter, Arial, sans-serif';ctx.fillText(fitCanvasText(ctx,setup.shipName||'Vehicle',790),margin,184);
   ctx.fillStyle = '#94a3b8';
-  ctx.font = '500 17px Inter, Arial, sans-serif';
-  ctx.fillText(`${setup.shipName} · current-patch prices, terminals, and travel-aware routing`, margin, 138);
+  ctx.font = '500 16px Inter, Arial, sans-serif';
+  nexusLoadoutCanvasText(ctx,'Current-patch prices, verified terminal details, travel-aware routing, and destination imagery.',margin,216,800,23,2);
   ctx.textAlign = 'right';
   ctx.fillStyle = '#64748b';
   ctx.font = '600 14px "Share Tech Mono", monospace';
-  ctx.fillText(new Date().toLocaleString(), width - margin, 52);
+  ctx.fillText(new Date().toLocaleString(), width - margin, headerHeight-22);
   ctx.textAlign = 'left';
 
   const summaryY = headerHeight + 18;
@@ -13664,103 +13810,79 @@ function nexusLoadoutBuildShoppingExportCanvas(scale = 2) {
   labels.forEach((entry,index) => {
     const x = margin + index*(boxWidth+boxGap);
     fillRoundedRect(ctx,x,summaryY,boxWidth,82,10,'#111722','#2a3344');
-    ctx.fillStyle = '#718096';
-    ctx.font = '700 12px "Share Tech Mono", monospace';
-    ctx.fillText(entry[0],x+16,summaryY+25);
-    ctx.fillStyle = '#f8fafc';
-    ctx.font = '800 25px Inter, Arial, sans-serif';
-    ctx.fillText(entry[1],x+16,summaryY+60);
+    ctx.fillStyle = '#718096';ctx.font = '700 12px "Share Tech Mono", monospace';ctx.fillText(entry[0],x+16,summaryY+25);
+    ctx.fillStyle = '#f8fafc';ctx.font = '800 25px Inter, Arial, sans-serif';ctx.fillText(fitCanvasText(ctx,entry[1],boxWidth-32),x+16,summaryY+60);
   });
 
   let y = headerHeight + summaryHeight;
   if (route.stops.length) {
-    ctx.fillStyle = '#ffffff';
-    ctx.font = '800 24px Inter, Arial, sans-serif';
+    ctx.fillStyle = '#ffffff';ctx.font = '800 24px Inter, Arial, sans-serif';
     ctx.fillText(route.mode==='cheapest'?'Cheapest-price purchase route':'Closest-location purchase route', margin, y+36);
-    ctx.fillStyle = '#94a3b8';
-    ctx.font = '500 14px Inter, Arial, sans-serif';
+    ctx.fillStyle = '#94a3b8';ctx.font = '500 14px Inter, Arial, sans-serif';
     ctx.fillText(`${route.stops.length} stop${route.stops.length===1?'':'s'} · ${route.systemCount} system${route.systemCount===1?'':'s'} · ${Math.round(route.stops.reduce((sum,stop)=>sum+stop.total,0)).toLocaleString()} aUEC route total`, margin, y+60);
     y += 80;
-    const cardGap = 16;
-    const cardWidth = (width - margin*2 - cardGap) / 2;
-    route.stops.forEach((stop,index) => {
-      const col = index % 2;
-      const rowIndex = Math.floor(index/2);
-      const x = margin + col*(cardWidth+cardGap);
-      const cy = y + rowIndex*190;
-      fillRoundedRect(ctx,x,cy,cardWidth,174,12,'#0f1520','#30384a');
-      fillRoundedRect(ctx,x+16,cy+16,42,42,8,'#201743','#5b45a7');
-      ctx.fillStyle = '#ddd6fe';
-      ctx.font = '800 18px "Share Tech Mono", monospace';
-      ctx.textAlign = 'center';
-      ctx.fillText(String(index+1),x+37,cy+43);
-      ctx.textAlign = 'left';
-      ctx.fillStyle = '#f8fafc';
-      ctx.font = '750 18px Inter, Arial, sans-serif';
-      nexusLoadoutCanvasText(ctx, stop.meta?.location || stop.location, x+70, cy+31, cardWidth-90, 22, 2);
-      ctx.fillStyle = '#94a3b8';
-      ctx.font = '500 13px Inter, Arial, sans-serif';
-      nexusLoadoutCanvasText(ctx, stop.meta?.terminal || 'Terminal not reported', x+70, cy+78, cardWidth-90, 18, 2);
-      let iy = cy+110;
-      stop.items.slice(0,3).forEach(offer => {
-        ctx.fillStyle = '#cbd5e1';
-        ctx.font = '600 13px Inter, Arial, sans-serif';
-        ctx.fillText(`${offer.row.quantity}× ${offer.row.name}`,x+18,iy);
-        ctx.textAlign = 'right';
-        ctx.fillStyle = '#6ee7b7';
-        ctx.font = '700 13px "Share Tech Mono", monospace';
-        ctx.fillText(`${Math.round(Number(offer.price.price_buy)*offer.row.quantity).toLocaleString()} aUEC`,x+cardWidth-18,iy);
-        ctx.textAlign = 'left';
-        iy += 20;
+    const cardWidth = (width - margin*2 - routeGap*(routeColumns-1)) / routeColumns;
+    let cardY=y;
+    routeCardRows.forEach(row=>{
+      row.cards.forEach((card,col)=>{
+        const {stop,index,height:cardHeight}=card;
+        const x=margin+col*(cardWidth+routeGap);
+        const cy=cardY;
+        fillRoundedRect(ctx,x,cy,cardWidth,cardHeight,12,'#0f1520','#30384a');
+        ctx.save();nexusLoadoutCanvasRoundedPath(ctx,x,cy,cardWidth,routeMediaHeight,12);ctx.clip();
+        const image=media.locations[index];
+        if(image)drawImageCover(ctx,image,x,cy,cardWidth,routeMediaHeight,0);
+        else{
+          const photoFallback=ctx.createLinearGradient(x,cy,x+cardWidth,cy+routeMediaHeight);photoFallback.addColorStop(0,'#111a2a');photoFallback.addColorStop(1,'#0b2630');ctx.fillStyle=photoFallback;ctx.fillRect(x,cy,cardWidth,routeMediaHeight);
+          ctx.fillStyle='rgba(196,181,253,.7)';ctx.font='800 44px "Share Tech Mono", monospace';ctx.textAlign='center';ctx.fillText(nexusLoadoutRouteInitials(stop.meta?.imageKey||stop.location),x+cardWidth/2,cy+routeMediaHeight/2+14);ctx.textAlign='left';
+        }
+        const shade=ctx.createLinearGradient(0,cy,0,cy+routeMediaHeight);shade.addColorStop(0,'rgba(7,10,16,.02)');shade.addColorStop(1,'rgba(7,10,16,.56)');ctx.fillStyle=shade;ctx.fillRect(x,cy,cardWidth,routeMediaHeight);ctx.restore();
+        fillRoundedRect(ctx,x+16,cy+16,42,42,8,'#201743','#7056c8');ctx.fillStyle='#ddd6fe';ctx.font='800 18px "Share Tech Mono", monospace';ctx.textAlign='center';ctx.fillText(String(index+1),x+37,cy+43);ctx.textAlign='left';
+
+        const bodyY=cy+routeMediaHeight;
+        ctx.fillStyle='#f8fafc';ctx.font='750 18px Inter, Arial, sans-serif';nexusLoadoutCanvasText(ctx,stop.meta?.location||stop.location,x+18,bodyY+29,cardWidth-36,22,2);
+        const terminals=[...new Set(stop.items.map(offer=>nexusLoadoutShoppingLocationMeta(offer.price).terminal).filter(Boolean))];
+        const terminalSummary=terminals.length===1?terminals[0]:terminals.length?`${terminals.length} shops at this destination`:'Terminal not reported';
+        ctx.fillStyle='#94a3b8';ctx.font='500 12px Inter, Arial, sans-serif';ctx.fillText(fitCanvasText(ctx,terminalSummary,cardWidth-36),x+18,bodyY+67);
+
+        const itemStart=bodyY+routeBodyHeader;
+        stop.items.forEach((offer,itemIndex)=>{
+          const rowY=itemStart+itemIndex*routeItemHeight;
+          if(itemIndex%2===0){ctx.fillStyle='rgba(24,31,47,.58)';ctx.fillRect(x+12,rowY,cardWidth-24,routeItemHeight-4);}
+          const priceWidth=172;
+          ctx.fillStyle='#cbd5e1';ctx.font='650 13px Inter, Arial, sans-serif';ctx.fillText(fitCanvasText(ctx,`${offer.row.quantity}× ${offer.row.name}`,cardWidth-priceWidth-48),x+18,rowY+17);
+          ctx.fillStyle='#74839a';ctx.font='500 10px Inter, Arial, sans-serif';ctx.fillText(`${nexusFormatPrice(offer.price.price_buy)} each`,x+18,rowY+33);
+          ctx.textAlign='right';ctx.fillStyle='#6ee7b7';ctx.font='750 13px "Share Tech Mono", monospace';ctx.fillText(`${Math.round(Number(offer.price.price_buy)*offer.row.quantity).toLocaleString()} aUEC`,x+cardWidth-18,rowY+24);ctx.textAlign='left';
+        });
+        const footerY=cy+cardHeight-routeFooterHeight;
+        ctx.strokeStyle='#293347';ctx.beginPath();ctx.moveTo(x+16,footerY);ctx.lineTo(x+cardWidth-16,footerY);ctx.stroke();
+        ctx.fillStyle='#74839a';ctx.font='700 11px "Share Tech Mono", monospace';ctx.fillText('STOP SUBTOTAL',x+18,footerY+32);
+        ctx.textAlign='right';ctx.fillStyle='#5eead4';ctx.font='800 16px "Share Tech Mono", monospace';ctx.fillText(`${Math.round(stop.total).toLocaleString()} aUEC`,x+cardWidth-18,footerY+32);ctx.textAlign='left';
       });
-      ctx.textAlign = 'right';
-      ctx.fillStyle = '#5eead4';
-      ctx.font = '800 15px "Share Tech Mono", monospace';
-      ctx.fillText(`${Math.round(stop.total).toLocaleString()} aUEC`,x+cardWidth-18,cy+156);
-      ctx.textAlign = 'left';
+      cardY += row.height + routeGap;
     });
-    y += routeRows*190;
+    y += routeCardRows.reduce((sum,row)=>sum+row.height,0)+Math.max(0,routeCardRows.length-1)*routeGap;
   }
 
-  ctx.fillStyle = '#ffffff';
-  ctx.font = '800 24px Inter, Arial, sans-serif';
-  ctx.fillText('Component purchase checklist', margin, y+34);
-  y += 58;
+  ctx.fillStyle = '#ffffff';ctx.font = '800 24px Inter, Arial, sans-serif';ctx.fillText('Component purchase checklist', margin, y+34);y += 58;
   rows.forEach((row,index) => {
-    const best = row.priceEntry?.rows?.[0];
-    const rowY = y + index*86;
+    const best = row.priceEntry?.rows?.[0];const rowY = y + index*86;
     fillRoundedRect(ctx,margin,rowY,width-margin*2,72,9,index%2?'#0d121c':'#101620','#263044');
-    ctx.fillStyle = row.mode === 'buy' ? '#60a5fa' : row.mode === 'owned' ? '#6ee7b7' : '#c4b5fd';
-    ctx.font = '800 13px "Share Tech Mono", monospace';
-    ctx.fillText(row.mode.toUpperCase(),margin+16,rowY+25);
-    ctx.fillStyle = '#f8fafc';
-    ctx.font = '750 18px Inter, Arial, sans-serif';
-    ctx.fillText(`${row.quantity}× ${row.name}`,margin+96,rowY+27);
-    ctx.fillStyle = '#7f8da3';
-    ctx.font = '500 12px Inter, Arial, sans-serif';
-    ctx.fillText(`Replaces ${[...new Set(row.stockNames||[])].join(', ') || 'stock component'}`,margin+96,rowY+51);
+    ctx.fillStyle = row.mode === 'buy' ? '#60a5fa' : row.mode === 'owned' ? '#6ee7b7' : '#c4b5fd';ctx.font = '800 13px "Share Tech Mono", monospace';ctx.fillText(row.mode.toUpperCase(),margin+16,rowY+25);
+    ctx.fillStyle = '#f8fafc';ctx.font = '750 18px Inter, Arial, sans-serif';ctx.fillText(fitCanvasText(ctx,`${row.quantity}× ${row.name}`,700),margin+96,rowY+27);
+    ctx.fillStyle = '#7f8da3';ctx.font = '500 12px Inter, Arial, sans-serif';ctx.fillText(fitCanvasText(ctx,`Replaces ${[...new Set(row.stockNames||[])].join(', ') || 'stock component'}`,700),margin+96,rowY+51);
     ctx.textAlign = 'right';
     if (row.mode === 'buy' && best) {
-      ctx.fillStyle = '#6ee7b7';
-      ctx.font = '800 17px "Share Tech Mono", monospace';
-      ctx.fillText(`${Math.round(Number(best.price_buy)*row.quantity).toLocaleString()} aUEC`,width-margin-16,rowY+27);
-      ctx.fillStyle = '#94a3b8';
-      ctx.font = '500 12px Inter, Arial, sans-serif';
-      ctx.fillText(nexusLoadoutShoppingLocation(best),width-margin-16,rowY+51);
+      ctx.fillStyle = '#6ee7b7';ctx.font = '800 17px "Share Tech Mono", monospace';ctx.fillText(`${Math.round(Number(best.price_buy)*row.quantity).toLocaleString()} aUEC`,width-margin-16,rowY+27);
+      ctx.fillStyle = '#94a3b8';ctx.font = '500 12px Inter, Arial, sans-serif';ctx.fillText(fitCanvasText(ctx,nexusLoadoutShoppingLocation(best),610),width-margin-16,rowY+51);
     } else {
-      ctx.fillStyle = '#94a3b8';
-      ctx.font = '700 14px "Share Tech Mono", monospace';
-      ctx.fillText(row.mode === 'owned' ? 'Already owned' : row.mode === 'craft' ? 'Craft / do not buy' : 'No current price',width-margin-16,rowY+38);
+      ctx.fillStyle = '#94a3b8';ctx.font = '700 14px "Share Tech Mono", monospace';ctx.fillText(row.mode === 'owned' ? 'Already owned' : row.mode === 'craft' ? 'Craft / do not buy' : 'No current price',width-margin-16,rowY+38);
     }
     ctx.textAlign = 'left';
   });
 
-  const footerY = height - footerHeight;
-  ctx.strokeStyle = '#263044';
-  ctx.beginPath(); ctx.moveTo(margin,footerY+12); ctx.lineTo(width-margin,footerY+12); ctx.stroke();
-  ctx.fillStyle = '#64748b';
-  ctx.font = '500 13px Inter, Arial, sans-serif';
-  ctx.fillText('Community-maintained prices and terminal reports are planning aids; confirm stock in game before departure.',margin,footerY+46);
+  const footerY = height - footerHeight;ctx.strokeStyle = '#263044';ctx.beginPath();ctx.moveTo(margin,footerY+12);ctx.lineTo(width-margin,footerY+12);ctx.stroke();
+  ctx.fillStyle = '#64748b';ctx.font = '500 13px Inter, Arial, sans-serif';ctx.fillText('Community-maintained prices and terminal reports are planning aids; confirm stock in game before departure.',margin,footerY+46);
   return canvas;
 }
 
@@ -13772,7 +13894,7 @@ async function nexusLoadoutExportShoppingImage() {
   const previous = button?.innerHTML;
   if (button) { button.disabled = true; button.innerHTML = '⏳ Building image…'; }
   try {
-    const canvas = nexusLoadoutBuildShoppingExportCanvas(2);
+    const canvas = await nexusLoadoutBuildShoppingExportCanvas(2);
     const blob = await canvasToPngBlob(canvas);
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
@@ -21900,7 +22022,7 @@ nexusInitializeCommodityTrading = function() {
 
 
 <script>
-/* ===== V0.81 — ALPHA 4.9 FUEL-AWARE COMMODITY ROUTING ===== */
+/* ===== V0.82 — ALPHA 4.9 FUEL-AWARE COMMODITY ROUTING ===== */
 const NEXUS_TRADE_FUEL_PROFILES = {
   'aegis avenger titan':{range:50,tank:.8,consumption:16,drive:1,source:'4.9 EPTU community capture',confidence:'EPTU exact'},
   'anvil c8x pisces expedition':{range:81.3,tank:1.3,consumption:16,drive:1,source:'4.9 EPTU community capture',confidence:'EPTU exact'},
