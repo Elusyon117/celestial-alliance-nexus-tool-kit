@@ -1,0 +1,5 @@
+Celestial Alliance Nexus ToolKit
+Release: v0.81
+Build: Fuel Route Planner
+Published package date: 2026-06-23
+Target: GitHub Pages, repository root

@@ -1,10 +1,12 @@
 {
+  "id": "./",
   "name": "Celestial Nexus — Alliance Toolkit",
   "short_name": "Celestial Nexus",
-  "description": "A community-built Star Citizen alliance toolkit.",
+  "description": "A community-built Star Citizen alliance toolkit for operations, logistics, mining, trading, and intelligence.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
+  "orientation": "any",
   "background_color": "#07131f",
   "theme_color": "#07131f",
   "icons": [

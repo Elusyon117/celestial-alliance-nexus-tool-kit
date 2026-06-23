@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Returning to Celestial Nexus…</title>
+  <meta name="robots" content="noindex">
+  <style>html{background:#07131f;color:#dcecff;font:16px system-ui}body{display:grid;min-height:100vh;place-items:center;margin:0}p{opacity:.8}</style>
+</head>
+<body>
+  <p>Returning to Celestial Nexus…</p>
+  <script>
+    const parts = location.pathname.split('/').filter(Boolean);
+    const base = location.hostname.endsWith('github.io') && parts.length ? `/${parts[0]}/` : '/';
+    location.replace(base + location.search + location.hash);
+  </script>
+</body>
+</html>
