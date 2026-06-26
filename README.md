@@ -2,7 +2,7 @@
 
 > A fan-made Star Citizen operations, logistics, intelligence, engineering, and organization-planning suite built for the **Celestial Alliance** organization.
 
-[![Version](https://img.shields.io/badge/version-0.82-7c5cff?style=flat-square)](#release-status)
+[![Version](https://img.shields.io/badge/version-1.2.1-7c5cff?style=flat-square)](#release-status)
 [![Platform](https://img.shields.io/badge/platform-GitHub%20Pages-2ea44f?style=flat-square)](#deployment)
 [![App](https://img.shields.io/badge/app-static%20PWA-39d0ff?style=flat-square)](#technical-overview)
 [![Star Citizen](https://img.shields.io/badge/Star%20Citizen-community%20toolkit-f2c94c?style=flat-square)](#disclaimer)
