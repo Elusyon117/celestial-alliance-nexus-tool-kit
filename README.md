@@ -571,7 +571,7 @@ When reporting a data issue, include:
 
 # Release status
 
-## Current release: v0.82
+## Current release: v1.2.1
 
 Current release highlights include:
 
