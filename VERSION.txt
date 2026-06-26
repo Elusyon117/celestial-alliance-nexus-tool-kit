@@ -1,5 +1,20 @@
 Celestial Alliance Nexus ToolKit
-Release: v0.82
-Build: Vehicle Shopping List Visuals
-Published package date: 2026-06-23
+Release: v1.2.1
+Build: Fleet Toolbar & Store-ready Hangar Sync
+Published package date: 2026-06-26
 Target: GitHub Pages, repository root
+
+Changes in this release:
+- Adds Fleet Profile & Hangar Sync as a permanent quick-access control in the top-left main toolbar
+- Shows the active profile's owned-vehicle count in the toolbar
+- Keeps the full Fleet Profile module card available on the Tool Hub
+- Repackages the Chrome/Edge extension with manifest.json at the ZIP root
+- Adds extension icons and removes the unnecessary broad tabs permission
+- Adds store listing copy, reviewer test instructions, privacy/support pages, and promotional assets
+- Adds a Firefox candidate package with a stable Gecko add-on ID
+- Updates the extension and toolkit to v1.2.1
+
+Security model remains local-first:
+- No RSI passwords, 2FA codes, session cookies, or authentication tokens are requested
+- Hangar snapshots stay in extension storage until the user explicitly connects or exports them
+- This release still has no Celestial Nexus cloud backend

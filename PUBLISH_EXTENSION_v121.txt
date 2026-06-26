@@ -1,0 +1,26 @@
+CELESTIAL NEXUS HANGAR SYNC v1.2.1 — PUBLIC PUBLISHING GUIDE
+
+CHROME WEB STORE
+1. Register and verify a Chrome Web Store developer account.
+2. Upload celestial-nexus-hangar-sync-v1.2.1-store.zip.
+   The manifest is at the ZIP root and includes 16, 32, 48, and 128 px icons.
+3. Copy the text from STORE_LISTING_v1.2.1.md into the listing and privacy sections.
+4. Upload store-assets/store-icon-128.png, screenshot-1280x800.png, and small-promo-440x280.png.
+5. Use the deployed privacy and support URLs from STORE_LISTING_v1.2.1.md.
+6. Complete the distribution and test-instructions sections, then submit for review.
+7. After approval, replace the toolkit's temporary ZIP download link with the Chrome Web Store listing URL or badge.
+
+MICROSOFT EDGE ADD-ONS
+1. Register with Microsoft Partner Center / Edge Add-ons.
+2. Upload the same store-ready ZIP.
+3. Reuse the listing copy, privacy URL, support URL, icon, screenshot, and promo artwork.
+4. Submit the listing for certification.
+
+FIREFOX
+- celestial-nexus-hangar-sync-v1.2.1-firefox-candidate.zip includes a stable Gecko ID.
+- Test it in Firefox before submitting to addons.mozilla.org.
+- Firefox release/beta installations require Mozilla signing.
+
+GITHUB RELEASE FALLBACK
+- Publish celestial-nexus-hangar-sync-v1.2.1.zip as a GitHub release asset for transparent source access and developer-mode testing.
+- Normal Chrome users should use the Chrome Web Store once the listing is approved because direct self-hosted installation is restricted on Windows and macOS.
