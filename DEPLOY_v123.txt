@@ -1,0 +1,35 @@
+CELESTIAL NEXUS — GITHUB PAGES UPDATE v1.2.3
+
+Upload these files to the existing repository root and replace the current versions:
+1. index.html
+2. sw.js
+3. VERSION.txt
+
+Optional documentation:
+4. RELEASE_NOTES_v1.2.3.md
+5. DEPLOY_v123.txt
+6. REMOVE_HANGAR_SYNC_FILES_v123.txt
+
+Keep the repository's existing assets, data, icons, manifest.webmanifest, and .nojekyll files.
+
+Remove extension-era files from the repository if they were previously uploaded:
+- hangar-sync-privacy.html
+- hangar-sync-support.html
+- celestial-nexus-hangar-sync-*.zip
+- extension/
+- extension-firefox/
+- store-assets/
+- STORE_LISTING_*.md
+- PUBLISH_EXTENSION_*.txt
+
+Suggested commit message:
+Release v1.2.3 — remove Fleet Profile and Hangar Sync
+
+Post-deploy test:
+1. Hard-refresh the GitHub Pages site.
+2. Confirm the Fleet Profile / Hangar Sync toolbar control and module are gone.
+3. Open Vehicle Manager and confirm ship ownership is controlled manually.
+4. Verify mining heads, mining-module slots, and independent industrial hardpoints still work.
+5. Verify Picture Studio presets and fitted center canvas still work.
+
+The service-worker cache is celestial-nexus-v1-2-3-2026-06-26.

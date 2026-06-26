@@ -1,0 +1,22 @@
+OPTIONAL REPOSITORY CLEANUP — REMOVE HANGAR SYNC FILES
+
+Delete these only if they exist in your repository:
+
+hangar-sync-privacy.html
+hangar-sync-support.html
+celestial-nexus-hangar-sync-v1.2.0.zip
+celestial-nexus-hangar-sync-v1.2.1.zip
+celestial-nexus-hangar-sync-v1.2.2.zip
+celestial-nexus-hangar-sync-v1.2.1-store.zip
+celestial-nexus-hangar-sync-v1.2.2-store.zip
+celestial-nexus-hangar-sync-v1.2.1-firefox-candidate.zip
+celestial-nexus-hangar-sync-v1.2.2-firefox-candidate.zip
+extension/
+extension-firefox/
+store-assets/
+STORE_LISTING_v1.2.1.md
+STORE_LISTING_v1.2.2.md
+PUBLISH_EXTENSION_v1.2.1.txt
+PUBLISH_EXTENSION_v1.2.2.txt
+
+Do not delete the normal toolkit assets, data, icons, manifest.webmanifest, or .nojekyll files.

@@ -1,18 +1,20 @@
 Celestial Alliance Nexus ToolKit
-Release: v1.2.2
-Build: Privacy-minimized Hangar Sync
+Release: v1.2.3
+Build: Local-Only Toolkit Rollback
 Published package date: 2026-06-26
 Target: GitHub Pages, repository root
 
 Changes in this release:
-- Removes raw pledge-card text, pledge identifiers, RSI page title, and source URL from extension storage
-- Stores only normalized ship/vehicle names, package name where available, quantity, ownership type, insurance text, and scan time
-- Automatically migrates and rewrites existing v1.2.1 extension snapshots into the minimized v1.2.2 format
-- Removes the unnecessary activeTab permission; the extension retains only storage plus narrowly scoped content-script hosts
-- Purges obsolete pledge identifiers and raw metadata from existing local Fleet Profile entries
-- Updates the public privacy notice, store listing, toolkit metadata, service-worker cache, and extension packages
+- Removes Fleet Profile & Hangar Sync from the toolkit
+- Removes the top-toolbar fleet profile control and extension bridge
+- Removes automatic pledged-ship ownership detection
+- Returns vehicle ownership to the existing manual Already owned / Buy vehicle in-game controls
+- Requires no browser extension, external account, cloud service, or backend
+- Keeps all Vehicle Manager acquisition planning and shopping routes
+- Keeps mining platform recommendations and mining gadgets
+- Keeps utility components, mining-module slots, and independent mining/salvage hardpoints
+- Keeps Picture Studio premium presets, custom formats, brands, brightness controls, and full-canvas scrolling
 
-Security model:
-- No RSI passwords, 2FA codes, session cookies, authentication tokens, payment data, analytics, advertising SDK, or remote code
-- Normalized snapshots remain in browser extension storage until the user connects, exports, or clears them
-- No Celestial Nexus cloud backend is included
+Compatibility note:
+- This release is based on the stable v1.1.2 application feature set and is numbered v1.2.3 to ensure GitHub Pages and service-worker clients update forward instead of downgrading.
+- Old local Fleet Profile data is ignored by this release and is not transmitted anywhere.
