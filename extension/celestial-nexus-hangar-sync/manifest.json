@@ -1,11 +1,10 @@
 {
   "manifest_version": 3,
   "name": "Celestial Nexus Hangar Sync",
-  "version": "1.2.1",
-  "description": "Locally scans the signed-in RSI My Hangar page and shares a user-approved fleet snapshot with Celestial Nexus.",
+  "version": "1.2.2",
+  "description": "Creates a privacy-minimized local fleet snapshot from the signed-in RSI My Hangar page for Celestial Nexus.",
   "permissions": [
-    "storage",
-    "activeTab"
+    "storage"
   ],
   "host_permissions": [
     "https://robertsspaceindustries.com/account/pledges*",
@@ -19,17 +18,17 @@
         "https://www.robertsspaceindustries.com/account/pledges*"
       ],
       "js": [
+        "snapshot-utils.js",
         "content-rsi.js"
       ],
       "run_at": "document_idle"
     },
     {
       "matches": [
-        "https://elusyon117.github.io/celestial-alliance-nexus-tool-kit/*",
-        "http://localhost/*",
-        "http://127.0.0.1/*"
+        "https://elusyon117.github.io/celestial-alliance-nexus-tool-kit/*"
       ],
       "js": [
+        "snapshot-utils.js",
         "bridge-toolkit.js"
       ],
       "run_at": "document_idle"

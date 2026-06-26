@@ -1,0 +1,18 @@
+CHROME WEB STORE — UPDATE THE EXISTING DRAFT TO v1.2.2
+
+1. Open the existing Celestial Nexus Hangar Sync item.
+2. Open Package.
+3. Upload celestial-nexus-hangar-sync-v1.2.2-store.zip.
+4. Confirm the package version displays 1.2.2.
+5. Return to Privacy. The activeTab justification should no longer be required because v1.2.2 removes that permission.
+6. Keep Website content selected.
+7. Check all three data-use certifications.
+8. Select No, I am not using remote code.
+9. Use this privacy policy URL:
+   https://elusyon117.github.io/celestial-alliance-nexus-tool-kit/hangar-sync-privacy.html
+10. Complete Distribution and Test instructions, save the draft, and submit for review.
+
+Store package behavior:
+- Processes visible RSI pledge content only after the user presses Scan.
+- Stores only normalized fleet names, package name where available, quantity, ownership, insurance text, and scan time.
+- Does not store raw pledge text, pledge IDs, page title, source URL, credentials, cookies, tokens, or payment data.

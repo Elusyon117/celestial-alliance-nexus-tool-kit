@@ -1,0 +1,19 @@
+CELESTIAL NEXUS v1.2.2 — GITHUB PAGES DEPLOYMENT
+
+Upload these files to the repository root, replacing existing versions:
+- index.html
+- sw.js
+- VERSION.txt
+- hangar-sync-privacy.html
+- hangar-sync-support.html
+- celestial-nexus-hangar-sync-v1.2.2.zip
+
+You may also upload the extension and extension-firefox folders for source transparency.
+
+Suggested commit:
+Release v1.2.2 — privacy-minimized Hangar Sync
+
+After deployment, verify:
+https://elusyon117.github.io/celestial-alliance-nexus-tool-kit/
+https://elusyon117.github.io/celestial-alliance-nexus-tool-kit/hangar-sync-privacy.html
+https://elusyon117.github.io/celestial-alliance-nexus-tool-kit/hangar-sync-support.html

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'celestial-nexus-v1-2-1-2026-06-26';
+const CACHE_NAME = 'celestial-nexus-v1-2-2-2026-06-26';
 
 const APP_SHELL = [
   './',

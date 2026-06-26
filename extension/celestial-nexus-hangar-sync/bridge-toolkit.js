@@ -2,13 +2,22 @@
   const SNAPSHOT_KEY = 'celestialNexusHangarSnapshotV1';
   const EXTENSION_SOURCE = 'celestial-nexus-hangar-extension';
   const TOOLKIT_SOURCE = 'celestial-nexus-toolkit';
-  const VERSION = '1.2.1';
+  const {VERSION,sanitizeSnapshot} = globalThis.CelestialNexusHangarSnapshot;
 
   function send(type,payload={}) {
     window.postMessage({source:EXTENSION_SOURCE,type,extensionVersion:VERSION,...payload},location.origin);
   }
   function readSnapshot(callback) {
-    chrome.storage.local.get([SNAPSHOT_KEY],result => callback(result?.[SNAPSHOT_KEY] || null));
+    chrome.storage.local.get([SNAPSHOT_KEY],result => {
+      const raw = result?.[SNAPSHOT_KEY] || null;
+      const snapshot = sanitizeSnapshot(raw);
+      if (raw && !snapshot) { chrome.storage.local.remove([SNAPSHOT_KEY],() => callback(null)); return; }
+      if (snapshot && JSON.stringify(raw) !== JSON.stringify(snapshot)) {
+        chrome.storage.local.set({[SNAPSHOT_KEY]:snapshot},() => callback(snapshot));
+        return;
+      }
+      callback(snapshot);
+    });
   }
 
   window.addEventListener('message',event => {

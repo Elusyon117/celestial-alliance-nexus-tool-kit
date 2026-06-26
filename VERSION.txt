@@ -1,20 +1,18 @@
 Celestial Alliance Nexus ToolKit
-Release: v1.2.1
-Build: Fleet Toolbar & Store-ready Hangar Sync
+Release: v1.2.2
+Build: Privacy-minimized Hangar Sync
 Published package date: 2026-06-26
 Target: GitHub Pages, repository root
 
 Changes in this release:
-- Adds Fleet Profile & Hangar Sync as a permanent quick-access control in the top-left main toolbar
-- Shows the active profile's owned-vehicle count in the toolbar
-- Keeps the full Fleet Profile module card available on the Tool Hub
-- Repackages the Chrome/Edge extension with manifest.json at the ZIP root
-- Adds extension icons and removes the unnecessary broad tabs permission
-- Adds store listing copy, reviewer test instructions, privacy/support pages, and promotional assets
-- Adds a Firefox candidate package with a stable Gecko add-on ID
-- Updates the extension and toolkit to v1.2.1
+- Removes raw pledge-card text, pledge identifiers, RSI page title, and source URL from extension storage
+- Stores only normalized ship/vehicle names, package name where available, quantity, ownership type, insurance text, and scan time
+- Automatically migrates and rewrites existing v1.2.1 extension snapshots into the minimized v1.2.2 format
+- Removes the unnecessary activeTab permission; the extension retains only storage plus narrowly scoped content-script hosts
+- Purges obsolete pledge identifiers and raw metadata from existing local Fleet Profile entries
+- Updates the public privacy notice, store listing, toolkit metadata, service-worker cache, and extension packages
 
-Security model remains local-first:
-- No RSI passwords, 2FA codes, session cookies, or authentication tokens are requested
-- Hangar snapshots stay in extension storage until the user explicitly connects or exports them
-- This release still has no Celestial Nexus cloud backend
+Security model:
+- No RSI passwords, 2FA codes, session cookies, authentication tokens, payment data, analytics, advertising SDK, or remote code
+- Normalized snapshots remain in browser extension storage until the user connects, exports, or clears them
+- No Celestial Nexus cloud backend is included
